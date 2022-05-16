@@ -1,0 +1,33 @@
+body{
+    text-transform: capitalize;
+    background-color: pink;
+}
+.c-body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.row{
+    background-color: pink;
+}
+.para{
+    margin: 10px 100px;
+    text-align: center;
+    color: red;
+}
+.img-fluid{
+    margin:30px 0px;
+}
+.heading{
+    color: white;
+}
+.heading span{
+    color: red;
+}
+a:hover{
+    background-color:black;
+    border-radius: 10px;
+    padding: 5px 10px;
+}

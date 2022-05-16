@@ -1,0 +1,65 @@
+/* this is an external css */
+p{
+    text-align: centre;
+    /* we can also use bolder,ligter,some valus like 100,200,300,700 */
+    line-height: 2;
+    /* it doubles the present height */
+    letter-spacing: 3px;
+}
+h2{
+    /* it specify the sixe of the text */
+    font-size: 60px;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold; 
+    
+    /* none line through, */
+    text-decoration: red line-through wavy;
+
+}
+#selector{
+    color: brown;
+}
+.class1{
+    color: blue;
+}
+h1 [class="attr"]{
+    color: blueviolet;
+}
+/* types of attribute selectors */
+
+h2 [class*="attr"]{
+    /* this matches tags which matches an specified word inside it */
+}
+h2 [class^="attr"]{
+/* this mathes everything that starts with attr */
+}
+h2 [class$="attr"]{
+/* this matches tags that ends with attr */
+}
+h2 [class~="attr"]{
+/* this matches tags that contains attr word in it */
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+.con span:nth-of-type(3){
+    background-color: blue;
+}
+h1::first-letter{
+    text-transform: capitalize;
+}
+p::first-line{
+    background-color:purple;
+}
+p::selection{
+    background-color: red;
+}
+
+/* priority of css  
+---id
+---class
+----element*/
+
+
