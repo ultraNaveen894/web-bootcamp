@@ -1,0 +1,52 @@
+<% layout('layout/boilerPlate') %> 
+<div class="row">
+<h1 class="text-center">new campgrounds</h1>
+<div class="col-6 offset-3">
+    <form action="/campgrounds" method="post" class="validated-form" novalidate>
+        <div class="mb-3">
+            <label class="form-label" for="name">title</label>
+            <input class="form-control" type="text" placeholder="enter title" id="name" name="title"  required >
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="location">location</label>
+            <input class="form-control" type="text" placeholder="enter location" id="location" name="location"  required >
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">image url</label>
+            <input class="form-control" type="text" placeholder="enter image url" id="image" name="image" required  >
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="price">price</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="0.00" id="price" required  >
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <span class="input-group-text">.00</span>
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">description</label>
+            <textarea class="form-control" type="text" placeholder="enter description" id="description" name="description"  required ></textarea>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <button class="btn-success">submit</button>
+        </div>
+    </form>
+    <a href="/campgrounds">back to campgrounds</a>
+</div>
+</div>
+
