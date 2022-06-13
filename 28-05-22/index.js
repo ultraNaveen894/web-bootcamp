@@ -66,7 +66,7 @@ app.delete('/farms/:id/delete',async(req,res)=>{
 })
 app.post('/farms',async(req,res)=>{
   const item=new Farm(req.body)
-  item.save();
+  await item.save();
   res.redirect('/farms')
 })
 
