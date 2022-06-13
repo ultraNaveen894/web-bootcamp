@@ -3,7 +3,7 @@
 <div class="row">
 <h1 class="text-center">edit campgrounds</h1>
 <div class="col-6 offset-3">
-    <form action="/campgrounds/<%=campgrounds._id%>?_method=PUT" method="post" class="validated-form" novalidate>
+    <form action="/campgrounds/<%=campgrounds._id%>?_method=PUT" method="post" class="validated-form" novalidate enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label" for="name">title</label>
             <input class="form-control" type="text" placeholder="enter title" id="name" name="title" value="<%= campgrounds.title %> " required>
@@ -18,18 +18,27 @@
                 Looks good!
               </div>
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="image">image url</label>
-            <input class="form-control" type="text" placeholder="enter image url" id="image" name="image"value="<%= campgrounds.image %> " required>
-            <div class="valid-feedback">
-                Looks good!
+        <div class="custom-file mb-3">
+            <label class="custom-file-label" for="inputGroupFile04">
+              <span class="d-inline-block text-truncate w-75"></span>
+            </label>
+            <input id="inputGroupFile04" type="file" multiple class="custom-file-input" name="image" multiple>
+          </div>
+          <div class="mb-3">
+            <% campgrounds.images.forEach((e,i)=>{ %> 
+
+              <img src="<%= e.thumbnail %> " alt="" class="img-thumbnail" >
+              <div class="form-check-inline">
+                <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%=e.filename  %> " >
               </div>
-        </div>
+              <label for="image-<%= i %> ">delete</label>
+              <% }) %> 
+          </div>
         <div class="mb-3">
             <label for="price">price</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="0.00" id="price" value="<%= campgrounds.price %> " required>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="0.00" id="price" value="<%= campgrounds.price %> " required multiple>
                 <div class="valid-feedback">
                     Looks good!
                   </div>
